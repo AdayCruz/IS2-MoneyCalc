@@ -13,6 +13,15 @@ public class Number {
         this(numerator, 1);
     }
     
+    public Number (double numerator){
+        this((long)numerator,1);
+        this.Simplify();
+    }
+    
+    public Number Simplify(){
+        return this;
+    }
+    
     public Number add(Number number){
         long numerator;
         long denominator;
@@ -21,6 +30,6 @@ public class Number {
         numerator=((denominator/this.denominator)*this.numerator)+
                 ((denominator/number.denominator)*number.numerator);
         
-        return this(numerator,denominator);
+        return this(numerator,denominator).Simplify();
     }
 }
