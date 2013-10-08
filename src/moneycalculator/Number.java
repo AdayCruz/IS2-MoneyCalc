@@ -7,29 +7,35 @@ public class Number {
     public Number(long numerator, long denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
+        simplify();
     }
     
-    public Number(long numerator){
-        this(numerator, 1);
+    public Number(long number){
+        this(number, 1);
     }
     
-    public Number (double numerator){
-        this((long)numerator,1);
-        this.Simplify();
+    public Number (double number){
+        this((long)number,1);
+        simplify();
     }
     
-    public Number Simplify(){
-        return this;
+    public void simplify(){
+        int [] prime = getPrimes();
+        
     }
     
     public Number add(Number number){
         long numerator;
         long denominator;
         
-        denominator=(this.denominator)*(number.denominator);
-        numerator=((denominator/this.denominator)*this.numerator)+
-                ((denominator/number.denominator)*number.numerator);
+        denominator=(this.denominator) * (number.denominator);
+        numerator=((denominator/this.denominator) * this.numerator) +
+                ((denominator/number.denominator) * number.numerator);
         
-        return this(numerator,denominator).Simplify();
+        return this;
+    }
+    
+    private long getPrimes(){
+        return int [] prime = {1, 2, 3, 5, 7, 9, 11, 13, 17, 19, 23};
     }
 }
