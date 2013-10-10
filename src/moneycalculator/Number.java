@@ -1,8 +1,8 @@
 package moneycalculator;
 
 public class Number {
-    private final long numerator;
-    private final long denominator;
+    private long numerator;     //Need to add final long?
+    private long denominator;   //Need to add final long?
 
     public Number(long numerator, long denominator) {
         this.numerator = numerator;
@@ -15,13 +15,31 @@ public class Number {
     }
     
     public Number (double number){
-        this((long)number,1);
+        numerator = (long) number;
+        denominator = 1;
+        while (numerator != denominator * number){
+            denominator = denominator * 10;
+            numerator = (long) (number * denominator);
+        }
         simplify();
     }
     
+    public long getNumerator() {
+        return numerator;
+    }
+
+    public long getDenominator() {
+        return denominator;
+    }
+    
     public void simplify(){
-        int [] prime = getPrimes();
-        
+        long [] prime = getPrimes();
+        for (long value : prime) {
+            while (isDivisible(value)){
+                this.numerator = this.numerator/value;
+                this.denominator = this.denominator/value;
+            }
+        }
     }
     
     public Number add(Number number){
@@ -35,7 +53,12 @@ public class Number {
         return this;
     }
     
-    private long getPrimes(){
-        return int [] prime = {1, 2, 3, 5, 7, 9, 11, 13, 17, 19, 23};
+    private long[] getPrimes(){
+        long [] primeNumbers = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31};
+        return primeNumbers;
+    }
+
+    private boolean isDivisible(long prime) {
+        return ( ( numerator % prime ) == 0 ) && ( ( denominator % prime ) == 0 );
     }
 }
