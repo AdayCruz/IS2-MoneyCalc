@@ -84,11 +84,6 @@ public class Number {
         
         return new Number(numerator,denominator);
     }
-    
-    private long[] getPrimes(){
-        long [] primeNumbers = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31};
-        return primeNumbers;
-    }
 
     private boolean isDivisible(long prime) {
         return ( ( numerator % prime ) == 0 ) && ( ( denominator % prime ) == 0 );
