@@ -1,10 +1,18 @@
 package moneycalculator;
 
-public class MoneyDialogGraphical implements MoneyDialog{
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
-    @Override
-    public void execute() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+public class MoneyDialogGraphical extends JPanel{
+
+
+    public MoneyDialogGraphical() {
+        this.add(createTextField());
+        this.add(new CurrencyDialogGraphical());
     }
 
+    private JTextField createTextField() {
+        JTextField textField = new JTextField (10);
+        return textField;
+    }
 }
