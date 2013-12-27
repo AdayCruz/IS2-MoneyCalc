@@ -12,4 +12,11 @@ public class CurrencySet extends HashSet<Currency>{
         if (instance == null) instance = new CurrencySet();
         return instance;
     }
+    
+    public Currency search(String code){
+        for (Currency currency : this) {
+            if (currency.getCode().equals(code)) return currency;
+        }
+        return null;
+    }
 }

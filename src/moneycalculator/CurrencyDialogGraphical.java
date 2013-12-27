@@ -4,8 +4,9 @@ import java.util.Arrays;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
-public class CurrencyDialogGraphical extends JPanel{
-
+public class CurrencyDialogGraphical extends JPanel implements CurrencyDialog{
+    private Currency currency;
+    
     public CurrencyDialogGraphical() {
         this.add(createComboBox());
     }
@@ -26,5 +27,10 @@ public class CurrencyDialogGraphical extends JPanel{
         }
         Arrays.sort(currencies);
         return currencies;
+    }
+
+    @Override
+    public Currency getCurrency() {
+        return currency;
     }
 }
