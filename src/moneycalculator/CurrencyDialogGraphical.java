@@ -2,7 +2,6 @@ package moneycalculator;
 
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.Arrays;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
@@ -14,7 +13,7 @@ public class CurrencyDialogGraphical extends JPanel implements CurrencyDialog{
     }
     
     private JComboBox createComboBox() {
-        String[] currencies = getCurrencies();
+        String[] currencies = CurrencySet.getInstance().getArray();
         JComboBox comboBox = new JComboBox(currencies);
         comboBox.setSelectedIndex(0);
         currency = CurrencySet.getInstance().search(comboBox.getSelectedItem().toString());
@@ -28,18 +27,6 @@ public class CurrencyDialogGraphical extends JPanel implements CurrencyDialog{
             
         });
         return comboBox;
-    }
-
-    private String[] getCurrencies() {
-        CurrencySet currencySet = CurrencySet.getInstance();
-        String[] currencies = new String[currencySet.size()];
-        int i=0;
-        for (Currency currency : currencySet) {
-            currencies[i]=currency.getCode();
-            i++;
-        }
-        Arrays.sort(currencies);
-        return currencies;
     }
 
     @Override

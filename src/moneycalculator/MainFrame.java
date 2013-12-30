@@ -11,11 +11,17 @@ import javax.swing.JPanel;
 
 public class MainFrame extends JFrame {
     
-    public MainFrame () {
+    private MoneyDialog moneyDialog;
+    private CurrencyDialog currencyDialog;
+    private MoneyViewer moneyViewer;
+    private ActionListenerFactory factory;
+    
+    public MainFrame (ActionListenerFactory factory) {
         
         this.setTitle("Money Calculator");
-        this.setMinimumSize(new Dimension(300,300));
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.factory=factory;
+        this.setSize(300,300);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         createComponents();
         this.setVisible(true);
     }
