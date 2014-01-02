@@ -2,8 +2,6 @@ package moneycalculator;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -64,9 +62,8 @@ public class MainFrame extends JFrame {
     }
 
     private JPanel createMoneyDialog() {
-        JPanel panel = new JPanel();
-        panel.add(new MoneyDialogGraphical());
-        panel.add(new CurrencyDialogGraphical());
+        MoneyDialogGraphical panel = new MoneyDialogGraphical();
+        this.moneyDialog = panel;
         return panel;
     }
 

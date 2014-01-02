@@ -21,10 +21,11 @@ public class MoneyCalculator {
     private void createCommands(MainFrame frame) {
         commandMap = new HashMap<>();
         commandMap.put("Calculate", new CalculateCommand(
-                    frame.getMoneyDialog();
-                    frame.getCurrencyDialog();
-                    frame.getMoneyViewer();
+                    frame.getMoneyDialog(),
+                    frame.getCurrencyDialog(),
+                    frame.getMoneyViewer()
                 ));
+        commandMap.pit("Exit", new ExitCommand());
     }
     
     private void createMainFrame(){

@@ -2,6 +2,6 @@ package moneycalculator;
 
 public interface MoneyDialog {
     
-    public void execute();
+    public Money getMoney();
 
 }
