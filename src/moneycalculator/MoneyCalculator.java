@@ -25,10 +25,10 @@ public class MoneyCalculator {
                     frame.getCurrencyDialog(),
                     frame.getMoneyViewer()
                 ));
-        commandMap.pit("Exit", new ExitCommand());
+        commandMap.put("Exit", new ExitCommand());
     }
     
-    private void createMainFrame(){
+    private MainFrame createMainFrame(){
         return new MainFrame(new ActionListenerFactory() {
 
             @Override
