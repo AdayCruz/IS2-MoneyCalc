@@ -36,8 +36,16 @@ public class MainFrame extends JFrame {
     }
     
     private void createComponents() {
-        this.add(createMoneyDialog());
+        this.add(createContentPanel());
         this.add(createToolbar(), BorderLayout.SOUTH);
+    }
+    
+    private JPanel createContentPanel() {
+        JPanel panel = new JPanel (new FlowLayout(FlowLayout.LEFT));
+        panel.add(createMoneyDialog());
+        panel.add(createCurrencyDialog());
+        panel.add(createMoneyViewer());
+        return panel;
     }
 
     private JPanel createToolbar() {
@@ -64,6 +72,18 @@ public class MainFrame extends JFrame {
     private JPanel createMoneyDialog() {
         MoneyDialogGraphical panel = new MoneyDialogGraphical();
         this.moneyDialog = panel;
+        return panel;
+    }
+
+    private JPanel createCurrencyDialog() {
+        CurrencyDialogGraphical panel = new CurrencyDialogGraphical();
+        this.currencyDialog = panel;
+        return panel;
+    }
+
+    private JPanel createMoneyViewer() {
+        MoneyViewerGraphical panel = new MoneyViewerGraphical();
+        this.moneyViewer = panel;
         return panel;
     }
 

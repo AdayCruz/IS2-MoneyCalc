@@ -1,7 +1,6 @@
 package moneycalculator;
 
 import java.awt.FlowLayout;
-import java.awt.PopupMenu;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JPanel;

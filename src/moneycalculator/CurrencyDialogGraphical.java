@@ -1,14 +1,26 @@
 package moneycalculator;
 
+import java.awt.FlowLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
 public class CurrencyDialogGraphical extends JPanel implements CurrencyDialog{
+    
     private Currency currency;
     
     public CurrencyDialogGraphical() {
+        this(CurrencySet.getInstance().search("EUR"));
+    }
+
+    public CurrencyDialogGraphical(Currency currency) {
+        super(new FlowLayout(FlowLayout.LEFT));
+        this.currency = currency;
+        this.createComponents();
+    }
+
+    private void createComponents() {
         this.add(createComboBox());
     }
     
