@@ -19,7 +19,12 @@ public class MoneyCalculator {
     }
 
     private void createCommands(MainFrame frame) {
-        
+        commandMap = new HashMap<>();
+        commandMap.put("Calculate", new CalculateCommand(
+                    frame.getMoneyDialog();
+                    frame.getCurrencyDialog();
+                    frame.getMoneyViewer();
+                ));
     }
     
     private void createMainFrame(){

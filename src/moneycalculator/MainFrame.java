@@ -1,7 +1,6 @@
 package moneycalculator;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,13 +18,25 @@ public class MainFrame extends JFrame {
     public MainFrame (ActionListenerFactory factory) {
         
         this.setTitle("Money Calculator");
-        this.factory=factory;
+        this.factory = factory;
         this.setSize(300,300);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         createComponents();
         this.setVisible(true);
     }
+    
+    public MoneyDialog getMoneyDialog(){
+        return moneyDialog;
+    }
 
+    public CurrencyDialog getCurrencyDialog(){
+        return currencyDialog;
+    }
+    
+    public MoneyViewer getMoneyViewer(){
+        return moneyViewer;
+    }
+    
     private void createComponents() {
         this.add(createMoneyDialog());
         this.add(createToolbar(), BorderLayout.SOUTH);
@@ -41,34 +52,15 @@ public class MainFrame extends JFrame {
 
     private JButton createCalculateButton() {
         JButton button = new JButton("Calculate");
-        button.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                calculate();
-            }
-        });
+        this.getRootPane().setDefaultButton(button);
+        button.addActionListener(factory.createActionListner("calculate"));
         return button;
     }
 
     private JButton createExitButton() {
         JButton button = new JButton ("Exit");
-        button.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                exit();
-            }
-        });
+        button.addActionListener(factory.createActionListner("exit"));
         return button;
-    }
-    
-    private void exit(){
-        dispose();
-    }
-    
-    private void calculate(){
-        System.out.println("Calculating...");
     }
 
     private JPanel createMoneyDialog() {
