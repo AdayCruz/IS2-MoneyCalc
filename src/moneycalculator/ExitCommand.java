@@ -2,12 +2,15 @@ package moneycalculator;
 
 class ExitCommand extends Command{
 
-    public ExitCommand() {
+    MainFrame frame;
+    
+    public ExitCommand(MainFrame frame) {
+        this.frame = frame;
     }
 
     @Override
     public void execute() {
-        System.exit(0);
+        frame.dispose();
     }
 
 }

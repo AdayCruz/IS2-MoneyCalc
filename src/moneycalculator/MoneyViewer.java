@@ -2,6 +2,6 @@ package moneycalculator;
 
 public interface MoneyViewer {
     
-    public void execute();
+    public void show(Money money);
 
 }

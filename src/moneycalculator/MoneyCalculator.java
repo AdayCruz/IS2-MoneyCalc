@@ -25,7 +25,7 @@ public class MoneyCalculator {
                     frame.getCurrencyDialog(),
                     frame.getMoneyViewer()
                 ));
-        commandMap.put("Exit", new ExitCommand());
+        commandMap.put("Exit", new ExitCommand(frame));
     }
     
     private MainFrame createMainFrame(){
