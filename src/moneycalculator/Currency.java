@@ -29,7 +29,8 @@ public class Currency {
     
     @Override
     public String toString() {
-        return code+" "+name+" "+symbol;
+        if (symbol!=null)return symbol;
+        else return code;
     }
     
 }

@@ -2,14 +2,14 @@ package moneycalculator;
 
 import java.util.Iterator;
 
-public class PrimeCollection implements Iterable<Integer> {
+public class PrimeCollection implements Iterable<Long> {
 
-    private int number = 1;
+    private long number = 1;
 
     @Override
-    public Iterator<Integer> iterator() {
+    public Iterator<Long> iterator() {
         
-        return new Iterator<Integer>() {
+        return new Iterator<Long>() {
             
             @Override
             public boolean hasNext() {
@@ -17,7 +17,7 @@ public class PrimeCollection implements Iterable<Integer> {
             }
 
             @Override
-            public Integer next() {
+            public Long next() {
                 number = calculateNextPrime(number);
                 return number;
             }
@@ -27,15 +27,15 @@ public class PrimeCollection implements Iterable<Integer> {
                 throw new UnsupportedOperationException("Not supported yet.");
             }
 
-            private int calculateNextPrime(int number) {
+            private long calculateNextPrime(long number) {
                 while (true) {
                     number++;
                     if (isPrime(number)) return number;
                 }
             }
 
-            private boolean isPrime(int number) {
-                for (int i = 2; i < number -1 ; i++) {
+            private boolean isPrime(long number) {
+                for (long i = 2; i < number -1 ; i++) {
                     if (number % i == 0) return false;
                 }
                 return true;

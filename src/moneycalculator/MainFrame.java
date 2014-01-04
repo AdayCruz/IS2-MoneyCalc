@@ -59,13 +59,13 @@ public class MainFrame extends JFrame {
     private JButton createCalculateButton() {
         JButton button = new JButton("Calculate");
         this.getRootPane().setDefaultButton(button);
-        button.addActionListener(factory.createActionListner("calculate"));
+        button.addActionListener(factory.createActionListner("Calculate"));
         return button;
     }
 
     private JButton createExitButton() {
         JButton button = new JButton ("Exit");
-        button.addActionListener(factory.createActionListner("exit"));
+        button.addActionListener(factory.createActionListner("Exit"));
         return button;
     }
 

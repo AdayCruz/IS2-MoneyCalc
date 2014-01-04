@@ -34,12 +34,13 @@ public class Number {
     
     private void simplify(){
         PrimeCollection prime = new PrimeCollection();
-        for (int value : prime) {
+        for (long value : prime) {
             while (isDivisible(value)){
                 this.numerator = this.numerator/value;
                 this.denominator = this.denominator/value;
             }
-            if ((value>this.numerator/2)&&(value>this.denominator/2))break;
+            //if ((value>this.numerator/2)&&(value>this.denominator/2))break;
+            if (value>10000)break;
         }
     }
     
@@ -87,5 +88,10 @@ public class Number {
 
     private boolean isDivisible(long prime) {
         return ( ( numerator % prime ) == 0 ) && ( ( denominator % prime ) == 0 );
+    }
+    
+    @Override
+    public String toString(){
+        return Double.toString((double)numerator/(double)denominator);
     }
 }

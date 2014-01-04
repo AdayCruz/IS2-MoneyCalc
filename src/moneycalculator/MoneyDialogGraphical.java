@@ -8,7 +8,7 @@ import javax.swing.JTextField;
 
 public class MoneyDialogGraphical extends JPanel implements MoneyDialog{
 
-    private String amount = "0";
+    private String amount = "1";
     private CurrencyDialog currencyDialog;
     
     public MoneyDialogGraphical() {

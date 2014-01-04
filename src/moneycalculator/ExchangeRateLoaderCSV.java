@@ -7,9 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ExchangeRateLoaderCSV implements ExchangeRateLoader {
-    
-    Number rate;
-    
+       
     @Override
     public ExchangeRate load(Currency input, Currency output, String URL) {
         try {
@@ -19,9 +17,9 @@ public class ExchangeRateLoaderCSV implements ExchangeRateLoader {
                 if (line == null) break;
                 if (line.split(";")[0].equals(input.getCode())||line.split(";")[0].equals(output.getCode())){
                     if (input.getCode().equals("EUR"))
-                        rate = new Number(Double.parseDouble(line.split(";")[1]));
+                        return new ExchangeRate(input,output,new Number(Double.parseDouble(line.split(";")[1])));
                     else if (output.getCode().equals("EUR"))
-                        rate = new Number(Double.parseDouble(line.split(";")[2]));
+                        return new ExchangeRate(input,output,new Number(Double.parseDouble(line.split(";")[2])));
                 }
             }
         }
@@ -29,7 +27,7 @@ public class ExchangeRateLoaderCSV implements ExchangeRateLoader {
         } 
         catch (IOException ex) {
         }
-        return new ExchangeRate(input,output,rate);
+        return new ExchangeRate(input,output,new Number(1));
     }
 
 }
