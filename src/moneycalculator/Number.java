@@ -17,8 +17,10 @@ public class Number {
     public Number (double number){
         numerator = (long) number;
         denominator = 1;
-        while (numerator != denominator * number){
+        int i=0;
+        while (numerator != denominator * number && i <= 4){
             denominator = denominator * 10;
+            i++;
             numerator = (long) (number * denominator);
         }
         simplify();

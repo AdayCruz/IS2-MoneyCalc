@@ -23,7 +23,7 @@ public class CalculateCommand extends Command{
 
     private Number getExchangeRate() {
         ExchangeRateLoader loader = new ExchangeRateLoaderCSV();
-        return loader.load(moneyDialog.getMoney().getCurrency(),currencyDialog.getCurrency(),"C:\\Users\\Aday\\Documents\\NetBeansProjects\\IS2-MoneyCalc\\eur-rates.csv").getRate();
+        return loader.load(moneyDialog.getMoney().getCurrency(),currencyDialog.getCurrency()).getRate();
     }
 
 }
