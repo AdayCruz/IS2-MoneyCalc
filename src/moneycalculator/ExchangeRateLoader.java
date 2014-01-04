@@ -2,6 +2,6 @@ package moneycalculator;
 
 public interface ExchangeRateLoader {
     
-    public void load(String URL);
+    public ExchangeRate load(Currency input, Currency output, String URL);
 
 }

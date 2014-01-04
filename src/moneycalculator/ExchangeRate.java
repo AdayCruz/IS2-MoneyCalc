@@ -15,6 +15,13 @@ public class ExchangeRate {
         this.rate = rate;
     }
 
+    ExchangeRate(Currency inputCurrency, Currency outputCurrency, Number rate) {
+        this.inputCurrency = inputCurrency;
+        this.outputCurrency = outputCurrency;
+        this.rate = rate;
+        date = new Date();
+    }
+
     public Date getDate() {
         return date;
     }
