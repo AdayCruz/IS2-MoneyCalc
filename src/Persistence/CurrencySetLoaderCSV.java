@@ -1,5 +1,7 @@
-package moneycalculator;
+package Persistence;
 
+import Model.CurrencySet;
+import Model.Currency;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;

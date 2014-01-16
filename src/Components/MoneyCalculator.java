@@ -1,8 +1,14 @@
-package moneycalculator;
+package Components;
 
+import Components.CalculateCommand;
+import Components.Command;
+import Components.ActionListenerFactory;
+import Components.ExitCommand;
+import UserInterface.MainFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
+import Persistence.CurrencySetLoaderCSV;
 
 public class MoneyCalculator {
 

@@ -1,4 +1,4 @@
-package moneycalculator;
+package Components;
 
 public abstract class Command {
     public abstract void execute();

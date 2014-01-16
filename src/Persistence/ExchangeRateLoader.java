@@ -1,4 +1,7 @@
-package moneycalculator;
+package Persistence;
+
+import Model.ExchangeRate;
+import Model.Currency;
 
 public interface ExchangeRateLoader {
     

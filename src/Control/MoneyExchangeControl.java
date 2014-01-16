@@ -1,4 +1,4 @@
-package moneycalculator;
+package Control;
 
 public class MoneyExchangeControl {
 

@@ -1,4 +1,4 @@
-package moneycalculator;
+package Persistence;
 
 public interface CurrencySetLoader {
     

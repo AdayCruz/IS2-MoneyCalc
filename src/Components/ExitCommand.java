@@ -1,4 +1,6 @@
-package moneycalculator;
+package Components;
+
+import UserInterface.MainFrame;
 
 class ExitCommand extends Command{
 

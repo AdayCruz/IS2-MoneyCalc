@@ -1,10 +1,17 @@
-package moneycalculator;
+package UserInterface;
 
+import UserInterface.MoneyDialog;
+import UserInterface.CurrencyDialog;
+import UserInterface.MoneyViewerGraphical;
+import UserInterface.CurrencyDialogGraphical;
+import UserInterface.MoneyViewer;
+import UserInterface.MoneyDialogGraphical;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import Components.ActionListenerFactory;
 
 public class MainFrame extends JFrame {
     

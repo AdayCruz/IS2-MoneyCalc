@@ -1,4 +1,4 @@
-package moneycalculator;
+package UserInterface;
 
 public interface CurrencyViewer {
 

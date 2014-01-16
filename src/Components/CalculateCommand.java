@@ -1,4 +1,12 @@
-package moneycalculator;
+package Components;
+
+import UserInterface.MoneyDialog;
+import UserInterface.CurrencyDialog;
+import UserInterface.MoneyViewer;
+import Model.Money;
+import Model.Number;
+import Persistence.ExchangeRateLoader;
+import Persistence.ExchangeRateLoaderCSV;
 
 public class CalculateCommand extends Command{
     

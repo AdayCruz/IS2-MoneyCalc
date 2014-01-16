@@ -1,4 +1,4 @@
-package moneycalculator;
+package Components;
 
 public class MoneyExchanger {
 

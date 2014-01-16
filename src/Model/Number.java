@@ -1,4 +1,6 @@
-package moneycalculator;
+package Model;
+
+import Components.PrimeCollection;
 
 public class Number {
     private long numerator;
